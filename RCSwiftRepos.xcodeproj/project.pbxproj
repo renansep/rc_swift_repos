@@ -16,6 +16,8 @@
 		758B088D22750C3C00CFA9FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758B088B22750C3C00CFA9FD /* LaunchScreen.storyboard */; };
 		758B089822750C3C00CFA9FD /* RCSwiftReposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B089722750C3C00CFA9FD /* RCSwiftReposTests.swift */; };
 		758B08A322750C3C00CFA9FD /* RCSwiftReposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B08A222750C3C00CFA9FD /* RCSwiftReposUITests.swift */; };
+		75EA14EC22751500005F4DC0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14EB22751500005F4DC0 /* Repository.swift */; };
+		75EA14EF22751564005F4DC0 /* RepositoryOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14EE22751564005F4DC0 /* RepositoryOwner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		758B089E22750C3C00CFA9FD /* RCSwiftReposUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCSwiftReposUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		758B08A222750C3C00CFA9FD /* RCSwiftReposUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCSwiftReposUITests.swift; sourceTree = "<group>"; };
 		758B08A422750C3C00CFA9FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75EA14EB22751500005F4DC0 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		75EA14EE22751564005F4DC0 /* RepositoryOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryOwner.swift; sourceTree = "<group>"; };
 		8853761F97D057FF432EE70D /* Pods-RCSwiftRepos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSwiftRepos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCSwiftRepos/Pods-RCSwiftRepos.debug.xcconfig"; sourceTree = "<group>"; };
 		954CFC0A463313242C91300F /* Pods-RCSwiftRepos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSwiftRepos.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCSwiftRepos/Pods-RCSwiftRepos.release.xcconfig"; sourceTree = "<group>"; };
 		DF9B5C50E313792BD1F14050 /* libPods-RCSwiftRepos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCSwiftRepos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,7 @@
 			children = (
 				758B088222750C3B00CFA9FD /* AppDelegate.swift */,
 				758B088B22750C3C00CFA9FD /* LaunchScreen.storyboard */,
+				75EA14EA227514F0005F4DC0 /* Models */,
 				7574CC5C2275116400B070AD /* Resources */,
 				7574CC5E2275117600B070AD /* Supporting Files */,
 				7574CC60227511F300B070AD /* WebServices */,
@@ -181,6 +186,23 @@
 				758B08A422750C3C00CFA9FD /* Info.plist */,
 			);
 			path = RCSwiftReposUITests;
+			sourceTree = "<group>";
+		};
+		75EA14EA227514F0005F4DC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75EA14ED2275154B005F4DC0 /* Repository */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		75EA14ED2275154B005F4DC0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				75EA14EB22751500005F4DC0 /* Repository.swift */,
+				75EA14EE22751564005F4DC0 /* RepositoryOwner.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		9FD97F98555B619EC38A639D /* Frameworks */ = {
@@ -357,7 +379,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7574CC652275122B00B070AD /* ServerRequest.swift in Sources */,
+				75EA14EF22751564005F4DC0 /* RepositoryOwner.swift in Sources */,
 				7574CC682275126D00B070AD /* WebServiceError.swift in Sources */,
+				75EA14EC22751500005F4DC0 /* Repository.swift in Sources */,
 				7574CC632275121700B070AD /* Server.swift in Sources */,
 				758B088322750C3B00CFA9FD /* AppDelegate.swift in Sources */,
 			);
