@@ -3,5 +3,4 @@ target 'RCSwiftRepos' do
 
   pod 'SDWebImage'
   pod 'SnapKit'
-  pod 'SwiftyJSON'
 end
