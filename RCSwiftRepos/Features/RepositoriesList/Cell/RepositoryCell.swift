@@ -42,18 +42,19 @@ class RepositoryCell: UITableViewCell {
     }()
     
     private var viewModel: RepositoryCellViewModel?
-}
-
-//-----------------------------------------------------------------------------
-// MARK: - Overrides
-//-----------------------------------------------------------------------------
-
-extension RepositoryCell {
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    //-----------------------------------------------------------------------------
+    // MARK: - Initialization
+    //-----------------------------------------------------------------------------
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         configureConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -109,22 +110,18 @@ extension RepositoryCell {
         starImageView.snp.makeConstraints {
             $0.top.equalTo(nameLabel.snp.bottom).offset(defaultSpacing)
             $0.leading.equalToSuperview()
-            $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
         
         nameLabelAndStarsContainerView.addSubview(starsCountLabel)
         starsCountLabel.snp.makeConstraints {
             $0.leading.equalTo(starImageView.snp.trailing).offset(defaultSpacing)
-            $0.centerY.equalTo(starImageView.snp.centerY)
+            $0.centerY.equalTo(starImageView.snp.centerY).offset(1)
         }
         
         contentView.addSubview(ownerAvatarImageView)
         ownerAvatarImageView.snp.makeConstraints {
-            let side: CGFloat = 44
-            $0.width.equalTo(side)
-            $0.height.equalTo(side)
-
+            $0.size.equalTo(44)
             $0.top.equalTo(defaultSpacing)
             $0.leading.equalTo(nameLabelAndStarsContainerView.snp.trailing).offset(defaultSpacing)
             $0.trailing.equalTo(-defaultSpacing)

@@ -11,11 +11,27 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
+    var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let rootNavigation = UINavigationController()
+        
+        let repositoriesListViewController = RepositoriesListViewController(
+            presenter: RepositoriesListPresenter(
+                coordinator: RepositoriesListCoordinator(
+                    navigationController: rootNavigation
+                )
+            )
+        )
+        
+        rootNavigation.pushViewController(repositoriesListViewController, animated: false)
+        
+        window?.rootViewController = rootNavigation
+        window?.makeKeyAndVisible()
+        
         return true
     }
 

@@ -18,6 +18,11 @@ extension UITableView {
         )
     }
     
+    func registerCell(withClass classType: AnyClass) {
+        let className = String(describing: classType)
+        register(classType, forCellReuseIdentifier: className)
+    }
+    
     func dequeueReusableCell<T>(withClass classType: T.Type) -> T {
         return dequeueReusableCell(withIdentifier: String(describing: classType)) as! T
     }

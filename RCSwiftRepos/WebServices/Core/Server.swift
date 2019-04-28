@@ -42,27 +42,29 @@ extension Server {
         let urlRequest = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: urlRequest, completionHandler: { data, response, error in
-            guard error == nil else {
-                completion(.failure(.generic))
-                return
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    completion(.failure(.generic))
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    completion(.failure(.generic))
+                    return
+                }
+                
+                guard 200...299 ~= httpResponse.statusCode else {
+                    completion(.failure(.generic))
+                    return
+                }
+                
+                guard let data = data else {
+                    completion(.failure(.generic))
+                    return
+                }
+                
+                completion(.success(data))
             }
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(.failure(.generic))
-                return
-            }
-            
-            guard 200...299 ~= httpResponse.statusCode else {
-                completion(.failure(.generic))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.generic))
-                return
-            }
-            
-            completion(.success(data))
         }).resume()
     }
 }
