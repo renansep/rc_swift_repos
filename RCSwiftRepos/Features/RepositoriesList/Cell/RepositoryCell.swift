@@ -133,7 +133,7 @@ extension RepositoryCell {
         contentView.addSubview(ownerNameLabel)
         ownerNameLabel.snp.makeConstraints {
             $0.top.equalTo(ownerAvatarImageView.snp.bottom).offset(defaultSpacing)
-            $0.trailing.equalTo(-defaultSpacing)
+            $0.trailing.equalTo(ownerAvatarImageView.snp.trailing)
             $0.bottom.equalTo(-defaultSpacing)
         }
     }
