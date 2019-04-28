@@ -14,8 +14,9 @@
 		758B088322750C3B00CFA9FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B088222750C3B00CFA9FD /* AppDelegate.swift */; };
 		758B088A22750C3C00CFA9FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758B088922750C3C00CFA9FD /* Assets.xcassets */; };
 		758B088D22750C3C00CFA9FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 758B088B22750C3C00CFA9FD /* LaunchScreen.storyboard */; };
-		758B089822750C3C00CFA9FD /* RCSwiftReposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B089722750C3C00CFA9FD /* RCSwiftReposTests.swift */; };
 		758B08A322750C3C00CFA9FD /* RCSwiftReposUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758B08A222750C3C00CFA9FD /* RCSwiftReposUITests.swift */; };
+		75AD8BEB227638DA0085A071 /* RepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AD8BEA227638DA0085A071 /* RepositorySpec.swift */; };
+		75B11BD12276347300897D36 /* RepositoryOwnerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B11BD02276347300897D36 /* RepositoryOwnerSpec.swift */; };
 		75EA14EC22751500005F4DC0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14EB22751500005F4DC0 /* Repository.swift */; };
 		75EA14EF22751564005F4DC0 /* RepositoryOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14EE22751564005F4DC0 /* RepositoryOwner.swift */; };
 		75EA14F2227517E4005F4DC0 /* RepositoryWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14F1227517E4005F4DC0 /* RepositoryWebServices.swift */; };
@@ -26,6 +27,7 @@
 		75EA150422752908005F4DC0 /* RepositoriesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14FF22752908005F4DC0 /* RepositoriesListPresenter.swift */; };
 		75EA150522752908005F4DC0 /* RepositoriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA150022752908005F4DC0 /* RepositoriesListViewController.swift */; };
 		75EA150622752908005F4DC0 /* RepositoriesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA150122752908005F4DC0 /* RepositoriesListViewModel.swift */; };
+		BFFF4D71538B59E85C93CE3A /* libPods-RCSwiftReposTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF031317BCB8589183AE6830 /* libPods-RCSwiftReposTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F8CF68B0222232215C1D092 /* Pods-RCSwiftReposTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSwiftReposTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCSwiftReposTests/Pods-RCSwiftReposTests.debug.xcconfig"; sourceTree = "<group>"; };
+		72EFB68C8579E4FF4749D8C8 /* Pods-RCSwiftReposTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSwiftReposTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCSwiftReposTests/Pods-RCSwiftReposTests.release.xcconfig"; sourceTree = "<group>"; };
 		7574CC622275121700B070AD /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		7574CC642275122B00B070AD /* ServerRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRequest.swift; sourceTree = "<group>"; };
 		7574CC672275126D00B070AD /* WebServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceError.swift; sourceTree = "<group>"; };
@@ -55,11 +59,12 @@
 		758B088C22750C3C00CFA9FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		758B088E22750C3C00CFA9FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		758B089322750C3C00CFA9FD /* RCSwiftReposTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCSwiftReposTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		758B089722750C3C00CFA9FD /* RCSwiftReposTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCSwiftReposTests.swift; sourceTree = "<group>"; };
 		758B089922750C3C00CFA9FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		758B089E22750C3C00CFA9FD /* RCSwiftReposUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCSwiftReposUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		758B08A222750C3C00CFA9FD /* RCSwiftReposUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCSwiftReposUITests.swift; sourceTree = "<group>"; };
 		758B08A422750C3C00CFA9FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75AD8BEA227638DA0085A071 /* RepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySpec.swift; sourceTree = "<group>"; };
+		75B11BD02276347300897D36 /* RepositoryOwnerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryOwnerSpec.swift; sourceTree = "<group>"; };
 		75EA14EB22751500005F4DC0 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		75EA14EE22751564005F4DC0 /* RepositoryOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryOwner.swift; sourceTree = "<group>"; };
 		75EA14F1227517E4005F4DC0 /* RepositoryWebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryWebServices.swift; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 		75EA150122752908005F4DC0 /* RepositoriesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesListViewModel.swift; sourceTree = "<group>"; };
 		8853761F97D057FF432EE70D /* Pods-RCSwiftRepos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSwiftRepos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCSwiftRepos/Pods-RCSwiftRepos.debug.xcconfig"; sourceTree = "<group>"; };
 		954CFC0A463313242C91300F /* Pods-RCSwiftRepos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSwiftRepos.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCSwiftRepos/Pods-RCSwiftRepos.release.xcconfig"; sourceTree = "<group>"; };
+		CF031317BCB8589183AE6830 /* libPods-RCSwiftReposTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCSwiftReposTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9B5C50E313792BD1F14050 /* libPods-RCSwiftRepos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCSwiftRepos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -89,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFFF4D71538B59E85C93CE3A /* libPods-RCSwiftReposTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +201,7 @@
 		758B089622750C3C00CFA9FD /* RCSwiftReposTests */ = {
 			isa = PBXGroup;
 			children = (
-				758B089722750C3C00CFA9FD /* RCSwiftReposTests.swift */,
+				75B11BCE2276344700897D36 /* Models */,
 				758B089922750C3C00CFA9FD /* Info.plist */,
 			);
 			path = RCSwiftReposTests;
@@ -207,6 +214,23 @@
 				758B08A422750C3C00CFA9FD /* Info.plist */,
 			);
 			path = RCSwiftReposUITests;
+			sourceTree = "<group>";
+		};
+		75B11BCE2276344700897D36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75B11BCF2276345B00897D36 /* Repository */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		75B11BCF2276345B00897D36 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				75AD8BEA227638DA0085A071 /* RepositorySpec.swift */,
+				75B11BD02276347300897D36 /* RepositoryOwnerSpec.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		75EA14EA227514F0005F4DC0 /* Models */ = {
@@ -275,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				DF9B5C50E313792BD1F14050 /* libPods-RCSwiftRepos.a */,
+				CF031317BCB8589183AE6830 /* libPods-RCSwiftReposTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -284,6 +309,8 @@
 			children = (
 				8853761F97D057FF432EE70D /* Pods-RCSwiftRepos.debug.xcconfig */,
 				954CFC0A463313242C91300F /* Pods-RCSwiftRepos.release.xcconfig */,
+				3F8CF68B0222232215C1D092 /* Pods-RCSwiftReposTests.debug.xcconfig */,
+				72EFB68C8579E4FF4749D8C8 /* Pods-RCSwiftReposTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -313,6 +340,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 758B08AA22750C3C00CFA9FD /* Build configuration list for PBXNativeTarget "RCSwiftReposTests" */;
 			buildPhases = (
+				C79D534F5BE5CB3F7CDC7D6D /* [CP] Check Pods Manifest.lock */,
 				758B088F22750C3C00CFA9FD /* Sources */,
 				758B089022750C3C00CFA9FD /* Frameworks */,
 				758B089122750C3C00CFA9FD /* Resources */,
@@ -437,6 +465,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C79D534F5BE5CB3F7CDC7D6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RCSwiftReposTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -465,7 +515,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				758B089822750C3C00CFA9FD /* RCSwiftReposTests.swift in Sources */,
+				75AD8BEB227638DA0085A071 /* RepositorySpec.swift in Sources */,
+				75B11BD12276347300897D36 /* RepositoryOwnerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +713,7 @@
 		};
 		758B08AB22750C3C00CFA9FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F8CF68B0222232215C1D092 /* Pods-RCSwiftReposTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -683,6 +735,7 @@
 		};
 		758B08AC22750C3C00CFA9FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72EFB68C8579E4FF4749D8C8 /* Pods-RCSwiftReposTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -1,0 +1,6 @@
+module Pods_RCSwiftReposTests {
+  umbrella header "Pods-RCSwiftReposTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
