@@ -19,6 +19,8 @@
 		75EA14EC22751500005F4DC0 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14EB22751500005F4DC0 /* Repository.swift */; };
 		75EA14EF22751564005F4DC0 /* RepositoryOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14EE22751564005F4DC0 /* RepositoryOwner.swift */; };
 		75EA14F2227517E4005F4DC0 /* RepositoryWebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14F1227517E4005F4DC0 /* RepositoryWebServices.swift */; };
+		75EA14F722751E40005F4DC0 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14F622751E40005F4DC0 /* RepositoryCell.swift */; };
+		75EA14F922751EE6005F4DC0 /* RepositoryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EA14F822751EE6005F4DC0 /* RepositoryCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,9 @@
 		75EA14EB22751500005F4DC0 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		75EA14EE22751564005F4DC0 /* RepositoryOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryOwner.swift; sourceTree = "<group>"; };
 		75EA14F1227517E4005F4DC0 /* RepositoryWebServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryWebServices.swift; sourceTree = "<group>"; };
+		75EA14F622751E40005F4DC0 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		75EA14F822751EE6005F4DC0 /* RepositoryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellViewModel.swift; sourceTree = "<group>"; };
+		75EA14FA2275201A005F4DC0 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		8853761F97D057FF432EE70D /* Pods-RCSwiftRepos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSwiftRepos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCSwiftRepos/Pods-RCSwiftRepos.debug.xcconfig"; sourceTree = "<group>"; };
 		954CFC0A463313242C91300F /* Pods-RCSwiftRepos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSwiftRepos.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCSwiftRepos/Pods-RCSwiftRepos.release.xcconfig"; sourceTree = "<group>"; };
 		DF9B5C50E313792BD1F14050 /* libPods-RCSwiftRepos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RCSwiftRepos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +111,7 @@
 		7574CC5E2275117600B070AD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				75EA14FA2275201A005F4DC0 /* BridgingHeader.h */,
 				758B088E22750C3C00CFA9FD /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -165,6 +171,7 @@
 			children = (
 				758B088222750C3B00CFA9FD /* AppDelegate.swift */,
 				758B088B22750C3C00CFA9FD /* LaunchScreen.storyboard */,
+				75EA14F322751DF3005F4DC0 /* Features */,
 				75EA14EA227514F0005F4DC0 /* Models */,
 				7574CC5C2275116400B070AD /* Resources */,
 				7574CC5E2275117600B070AD /* Supporting Files */,
@@ -214,6 +221,31 @@
 				75EA14F1227517E4005F4DC0 /* RepositoryWebServices.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		75EA14F322751DF3005F4DC0 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				75EA14F422751E03005F4DC0 /* RepositoriesList */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		75EA14F422751E03005F4DC0 /* RepositoriesList */ = {
+			isa = PBXGroup;
+			children = (
+				75EA14F522751E1A005F4DC0 /* Cell */,
+			);
+			path = RepositoriesList;
+			sourceTree = "<group>";
+		};
+		75EA14F522751E1A005F4DC0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				75EA14F822751EE6005F4DC0 /* RepositoryCellViewModel.swift */,
+				75EA14F622751E40005F4DC0 /* RepositoryCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		9FD97F98555B619EC38A639D /* Frameworks */ = {
@@ -393,9 +425,11 @@
 				75EA14EF22751564005F4DC0 /* RepositoryOwner.swift in Sources */,
 				7574CC682275126D00B070AD /* WebServiceError.swift in Sources */,
 				75EA14EC22751500005F4DC0 /* Repository.swift in Sources */,
+				75EA14F922751EE6005F4DC0 /* RepositoryCellViewModel.swift in Sources */,
 				75EA14F2227517E4005F4DC0 /* RepositoryWebServices.swift in Sources */,
 				7574CC632275121700B070AD /* Server.swift in Sources */,
 				758B088322750C3B00CFA9FD /* AppDelegate.swift in Sources */,
+				75EA14F722751E40005F4DC0 /* RepositoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,6 +606,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.renansep.RCSwiftRepos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RCSwiftRepos/Supporting Files/BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -591,6 +626,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.renansep.RCSwiftRepos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/RCSwiftRepos/Supporting Files/BridgingHeader.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
