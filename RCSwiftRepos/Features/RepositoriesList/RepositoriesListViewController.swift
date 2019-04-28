@@ -11,6 +11,8 @@ import UIKit
 class RepositoriesListViewController: UIViewController {
     
     enum Event {
+        case viewDidLoad(completion: (Result<Void, WebServiceError>) -> Void)
+        case pullToRefresh(completion: (Result<Void, WebServiceError>) -> Void)
         case selection(row: Int)
         case reachedScrollEnd(completion: () -> Void)
     }
@@ -18,6 +20,8 @@ class RepositoriesListViewController: UIViewController {
     //-----------------------------------------------------------------------------
     // MARK: - Private properties
     //-----------------------------------------------------------------------------
+    
+    private let refreshControl = UIRefreshControl()
     
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -66,12 +70,21 @@ extension RepositoriesListViewController {
         
         view.backgroundColor = .white
         
+        refreshControl.addTarget(self, action: #selector(pullToRefreshTriggered), for: .valueChanged)
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.registerCell(withClass: RepositoryCell.self)
+        tableView.refreshControl = refreshControl
         
         configureConstraints()
-        requestRepositories()
+        
+        tableView.isHidden = true
+        activityIndicator.startAnimating()
+        presenter.handleEvent(.viewDidLoad(completion: { result in
+            self.activityIndicator.stopAnimating()
+            self.handleRequestResult(result)
+        }))
     }
 }
 
@@ -93,23 +106,30 @@ extension RepositoriesListViewController {
         }
     }
     
-    private func requestRepositories() {
-        tableView.isHidden = true
-        activityIndicator.startAnimating()
-        
-        presenter.requestRepositories { result in
-            self.activityIndicator.stopAnimating()
+    private func handleRequestResult(_ result: Result<Void, WebServiceError>) {
+        switch result {
             
-            switch result {
-                
-            case .success:
-                self.tableView.reloadData()
-                self.tableView.isHidden = false
-                
-            case .failure(let error):
-                print(error)
-            }
+        case .success:
+            self.tableView.reloadData()
+            self.tableView.isHidden = false
+            
+        case .failure(let error):
+            print(error)
         }
+    }
+}
+
+//-----------------------------------------------------------------------------
+// MARK: - Event handling
+//-----------------------------------------------------------------------------
+
+extension RepositoriesListViewController {
+    
+    @objc private func pullToRefreshTriggered() {
+        presenter.handleEvent(.pullToRefresh(completion: { result in
+            self.refreshControl.endRefreshing()
+            self.handleRequestResult(result)
+        }))
     }
 }
 

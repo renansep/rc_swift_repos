@@ -49,6 +49,13 @@ extension RepositoriesListPresenter {
     
     func handleEvent(_ event: RepositoriesListViewController.Event) {
         switch event {
+            
+        case .viewDidLoad(let completion):
+            requestRepositories(completion: completion)
+            
+        case .pullToRefresh(let completion):
+            currentPage = 1
+            requestRepositories(completion: completion)
 
         case .selection(let row):
             guard repositories.indices.contains(row) else { return }
@@ -59,8 +66,15 @@ extension RepositoriesListPresenter {
             requestNextPageIfNeeded(completion: completion)
         }
     }
+}
+
+//-----------------------------------------------------------------------------
+// MARK: - Private methods
+//-----------------------------------------------------------------------------
+
+extension RepositoriesListPresenter {
     
-    func requestRepositories(completion: @escaping (Result<Void, WebServiceError>) -> Void) {
+    private func requestRepositories(completion: @escaping (Result<Void, WebServiceError>) -> Void) {
         RepositoryWebServices().mostStarred(
             languageName: "swift",
             page: currentPage,
@@ -68,6 +82,11 @@ extension RepositoriesListPresenter {
                 switch result {
                     
                 case .success(let repositories):
+                    if self.currentPage == 1 {
+                        self.repositories = []
+                        self.viewModel.cellsViewModels = []
+                    }
+                    
                     self.repositories += repositories
                     
                     self.viewModel.cellsViewModels += repositories.map {
@@ -90,13 +109,6 @@ extension RepositoriesListPresenter {
             }
         )
     }
-}
-
-//-----------------------------------------------------------------------------
-// MARK: - Private methods
-//-----------------------------------------------------------------------------
-
-extension RepositoriesListPresenter {
     
     private func requestNextPageIfNeeded(completion: @escaping () -> Void) {
         guard !isLoadingNextPage else { return }
