@@ -28,6 +28,7 @@ class RepositoriesListPresenter {
     
     private var repositories: [Repository] = []
     private var currentPage: Int = 1
+    private var isLoadingNextPage = false
     
     //-----------------------------------------------------------------------------
     // MARK: - Initialization
@@ -52,6 +53,9 @@ extension RepositoriesListPresenter {
             guard repositories.indices.contains(row) else { return }
             
             coordinator.handleEvent(.selection(repositories[row]))
+            
+        case .reachedScrollEnd(let completion):
+            requestNextPageIfNeeded(completion: completion)
         }
     }
     
@@ -84,5 +88,22 @@ extension RepositoriesListPresenter {
                 }
             }
         )
+    }
+}
+
+//-----------------------------------------------------------------------------
+// MARK: - Private methods
+//-----------------------------------------------------------------------------
+
+extension RepositoriesListPresenter {
+    
+    private func requestNextPageIfNeeded(completion: @escaping () -> Void) {
+        guard !isLoadingNextPage else { return }
+        
+        isLoadingNextPage = true
+        requestRepositories { result in
+            self.isLoadingNextPage = false
+            completion()
+        }
     }
 }

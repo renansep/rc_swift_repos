@@ -12,6 +12,7 @@ class RepositoriesListViewController: UIViewController {
     
     enum Event {
         case selection(row: Int)
+        case reachedScrollEnd(completion: () -> Void)
     }
     
     //-----------------------------------------------------------------------------
@@ -137,5 +138,13 @@ extension RepositoriesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter.handleEvent(.selection(row: indexPath.row))
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard indexPath.row == viewModel.cellsViewModels.count - 1 else { return }
+        
+        presenter.handleEvent(.reachedScrollEnd(completion: {
+            tableView.reloadData()
+        }))
     }
 }
