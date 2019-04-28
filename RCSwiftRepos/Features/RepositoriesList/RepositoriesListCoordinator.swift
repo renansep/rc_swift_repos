@@ -8,28 +8,19 @@
 
 import UIKit
 
-class RepositoriesListCoordinator {
+protocol RepositoriesListCoordinatorType {
+    func handleEvent(_ event: RepositoriesListPresenter.Event)
+}
+
+class RepositoriesListCoordinator: Coordinator {
     
-    //-----------------------------------------------------------------------------
-    // MARK: - Private properties
-    //-----------------------------------------------------------------------------
-    
-    private weak var navigationController: UINavigationController?
-    
-    //-----------------------------------------------------------------------------
-    // MARK: - Initialization
-    //-----------------------------------------------------------------------------
-    
-    init(navigationController: UINavigationController?) {
-        self.navigationController = navigationController
-    }
 }
 
 //-----------------------------------------------------------------------------
 // MARK: - Public methods
 //-----------------------------------------------------------------------------
 
-extension RepositoriesListCoordinator {
+extension RepositoriesListCoordinator: RepositoriesListCoordinatorType {
     
     func handleEvent(_ event: RepositoriesListPresenter.Event) {
         switch event {

@@ -28,3 +28,24 @@ struct Repository: Decodable {
         case owner
     }
 }
+
+//-----------------------------------------------------------------------------
+// MARK: - Mocks
+//-----------------------------------------------------------------------------
+
+extension Repository {
+    
+    static var mock: Repository {
+        let jsonString = """
+        {
+            "name": "repositoryName",
+            "stargazers_count": 1,
+            "owner": {
+                "avatar_url": "https://www.apple.com",
+                "login": "test"
+            }
+        }
+        """
+        return try! JSONDecoder().decode(Repository.self, from: jsonString.data(using: .utf8)!)
+    }
+}

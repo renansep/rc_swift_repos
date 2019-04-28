@@ -20,13 +20,14 @@ class RepositoriesListPresenter {
     
     let viewModel: RepositoriesListViewModel
     
+    var repositories: [Repository] = []
+    
     //-----------------------------------------------------------------------------
     // MARK: - Private properties
     //-----------------------------------------------------------------------------
     
-    private let coordinator: RepositoriesListCoordinator
+    private let coordinator: RepositoriesListCoordinatorType
     
-    private var repositories: [Repository] = []
     private var currentPage: Int = 1
     private var isLoadingNextPage = false
     
@@ -34,7 +35,7 @@ class RepositoriesListPresenter {
     // MARK: - Initialization
     //-----------------------------------------------------------------------------
     
-    init(coordinator: RepositoriesListCoordinator) {
+    init(coordinator: RepositoriesListCoordinatorType) {
         self.coordinator = coordinator
         self.viewModel = RepositoriesListViewModel(cellsViewModels: [])
     }

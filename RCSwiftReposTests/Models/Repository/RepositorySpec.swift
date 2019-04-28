@@ -77,3 +77,10 @@ class RepositorySpec: QuickSpec {
         }
     }
 }
+
+extension Repository: Equatable {
+    
+    public static func == (lhs: Repository, rhs: Repository) -> Bool {
+        return lhs.name == rhs.name && lhs.starsCount == rhs.starsCount && lhs.owner == rhs.owner
+    }
+}

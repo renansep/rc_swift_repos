@@ -63,3 +63,10 @@ class RepositoryOwnerSpec: QuickSpec {
         }
     }
 }
+
+extension Repository.Owner: Equatable {
+    
+    public static func == (lhs: Repository.Owner, rhs: Repository.Owner) -> Bool {
+        return lhs.avatarURL == rhs.avatarURL && lhs.login == rhs.login
+    }
+}
